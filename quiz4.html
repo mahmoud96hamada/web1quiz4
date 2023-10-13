@@ -8,7 +8,7 @@
 <script>
     function makeTree(size){
         let tree = "";
-        for(let i=size;i>1;i-=2){
+        for(let i=size;i>=1;i-=2){
             for(let k=0;k<i;k++){
                 tree+="*";
             }
@@ -16,9 +16,8 @@
         }
         document.writeln("<div style='text-align:center'>"+tree+"</div>")
     }
-    wndows.onload = makeTree(20);
 </script>
-<body >
+<body onload="makeTree(21)">
     <div id="a"  class="a"></div>
 </body>
 </html>
