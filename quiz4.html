@@ -6,57 +6,19 @@
     <title>Document</title>
 </head>
 <script>
-    function neww(){
-        let k="";
-        let j=0;
-        for(let i=0;i<6;i++){
-            switch(i){
-                case 0:j=0;
-                break;
-                case 1:j=2;
-                break;
-                case 2:j=4;
-                break;
-                case 3:j=6;
-                break;
-                case 4:j=8;
-                break;
-                default:j=9;
-                break;
-                
+    function makeTree(size){
+        let tree = "";
+        for(let i=size;i>1;i-=2){
+            for(let k=0;k<i;k++){
+                tree+="*";
             }
-            for(j;j<9;j++){
-                k+="*";
-            }
-            k+="<br>";
-            
-            
-            
+            tree+="<br/>";
         }
-        ((document.getElementById("a")).innerHTML) =k;
-     }
-</script>
-<style>
-    .a{
-        @media (width>900px) {
-            background-color: gray;
-            padding-top: 10px;
-            text-align: center;
-            margin-inline: 50px;
-            margin-top: 50px;
-        }
-        
-        @media (width<=900px) {
-            background-color: gray;
-            padding-top: 10px;
-            text-align: center;
-            margin-inline: 50px;
-            margin-top: 40px;
-        }
+        document.writeln("<div style='text-align:center'>"+tree+"</div>")
     }
-    
-</style>
-<body onload="neww()">
+    wndows.onload = makeTree(20);
+</script>
+<body >
     <div id="a"  class="a"></div>
 </body>
 </html>
